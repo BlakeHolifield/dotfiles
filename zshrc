@@ -97,6 +97,18 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias notes='cd /home/bholifie/.notable/notes'
+alias iusr='cd /home/bholifie/git/app-interface/data/teams/insights/users'
+alias plan='./home/bholifie/scripts/planner/dist/linux-unpacked/planner'
+
+function grb() {
+  BRANCH = "$1"
+  git checkout master
+  git pull
+  git checkout $BRANCH 
+  git rebase master
+  git push -f blake $BRANCH 
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
