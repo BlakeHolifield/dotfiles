@@ -107,7 +107,17 @@ function grb() {
   git pull
   git checkout $BRANCH 
   git rebase master
-  git push -f blake $BRANCH 
+  git push -f origin $BRANCH 
+}
+
+function sync() {
+  git checkout master
+  git pull upstream master
+  git push origin master
+}
+
+function weather() {
+  curl wttr.in/hsv
 }
 
 export NVM_DIR="$HOME/.nvm"
