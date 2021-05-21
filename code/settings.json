@@ -1,0 +1,25 @@
+{
+    "workbench.colorTheme": "Andromeda",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "go.formatTool": "goimports",
+    "typescript.disableAutomaticTypeAcquisition": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "todo-tree.tree.showScanModeButton": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+}
