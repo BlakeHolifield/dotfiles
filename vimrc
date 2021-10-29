@@ -12,8 +12,7 @@ set exrc
 set secure
  
 set autoindent	  " Auto-indent new lines
-set shiftwidth=2  " Number of auto-indent spaces
-set smartindent	  " Enable smart-indent
+set shiftwidth=2  " Number of auto-indent spaces set smartindent	  " Enable smart-indent
 set smarttab	  " Enable smart-tabs
 set softtabstop=2 " Number of spaces per Tab
 set autowrite
@@ -29,19 +28,25 @@ set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusl
 set t_Co=256
  
 "" Advanced
-set ruler	" Show row and column ruler information
-set signcolumn=yes " Debugger column on left
-set colorcolumn=80  " warning line at 80 chars
+" set ruler	" Show row and column ruler information
+" set signcolumn=yes " Debugger column on left
+" set colorcolumn=80  " warning line at 80 chars
  
 set backspace=indent,eol,start	" Backspace behaviour
 
 let mapleader=","
 
-" quickfix menu bindings
+" Quick save
+nmap <leader>w :w<CR>
+
+" Quickfix menu bindings
 nnoremap <leader>n :cp<CR>
 nnoremap <leader>m :cn<CR>
 nnoremap <leader>a :ccl<CR>
 
+" copy and paste via system clipboard
+vmap <leader>yc "+y
+vmap <leader>yp "+p
 
 " vim-go mapping
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
@@ -49,6 +54,10 @@ autocmd FileType go nmap <leader>r  <Plug>(go-run)
 autocmd FileType go nmap <leader>t  <Plug>(go-test)
 autocmd FileType go nmap <leader>rn  <Plug>(go-rename)
 autocmd FileType go nmap <leader>alt :GoAlternate<CR>
+
+" vim-rust mapping
+let g:rustfmt_autosave = 1
+autocmd FileType rust nmap <leader>b :w<CR>:Cbuild<CR>
 
 " vim go
 let g:go_highlight_types = 1
@@ -72,6 +81,20 @@ if has('nvim-0.5')
   nnoremap <leader>fb <cmd>Telescope buffers<cr>
   nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 endif
+
+let g:asciidoctor_executable = 'asciidoctor'
+" Conceal *bold*, _italic_, `code` and urls in lists and paragraphs, default `0`.
+" See limitations in end of the README
+let g:asciidoctor_syntax_conceal = 1
+
+" Highlight indented text, default `1`.
+let g:asciidoctor_syntax_indented = 0
+
+nnoremap <leader>ch :Asciidoctor2HTML<CR>
+nnoremap <leader>oh :AsciidoctorOpenHTML<CR>
+" execute the godoc coversion script with the current filename
+nnoremap <leader>cx :!/home/bholifie/utils/gdoc.sh %:S<CR>
+nnoremap <leader>ox :AsciidoctorOpenDOCX<CR>
 
 " airline
 let g:airline_powerline_fonts = 1
@@ -105,6 +128,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'ruanyl/vim-gh-line'
 Plug 'sebdah/vim-delve'
+Plug 'rust-lang/rust.vim'
+Plug 'habamax/vim-asciidoctor'
 
 Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -113,4 +138,4 @@ Plug 'artanikin/vim-synthwave84'
 " All of your Plugins must be added before the following line
 call plug#end()            " required
 
-colorscheme synthwave84
+colorscheme nord
