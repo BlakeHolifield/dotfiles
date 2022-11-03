@@ -120,7 +120,6 @@ Plug 'tpope/vim-surround',
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
