@@ -137,6 +137,9 @@ alias ns=contextSwap
 alias gt=go_test
 alias bt=bluetoothctl
 alias gti='git "$@"'
+alias hac='code $HOME/workspaces/hac.code-workspace'
+alias int='code $HOME/app-interface'
+alias wss='code $HOME/git/dynamic-browser-events'
 
 zplug load
 
